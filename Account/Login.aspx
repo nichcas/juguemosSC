@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Log In" Language="VB" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="false"
+﻿<%@ Page Title="Log In" Language="VB" MasterPageFile="~/Account/Account.master" AutoEventWireup="false"
     CodeFile="Login.aspx.vb" Inherits="Account_Login" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -19,7 +19,7 @@
     </p>
     <form class="form-horizontal" action="">
 
-    <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false" DestinationPageUrl="~/Miembros/index.aspx">
+    <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false" DestinationPageUrl="~/Miembros/Default.aspx">
         <LayoutTemplate>
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>

@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    
+
+ <body  id="contacto">
+
     <div class="container">
     <div class="col-lg-12">
         <img src="imagenes/bannerBolas1.fw.png" width="100%" />
@@ -41,20 +43,20 @@
     <div class="form-group">
       <asp:Label ID="lblEmail" runat="server" AssociatedControlID="Email" CssClass="col-lg-3 control-label">Email:</asp:Label>
       <div class="col-lg-9">
-           <asp:TextBox ID="Email" runat="server" CssClass="textEntry form-control"></asp:TextBox>
+           <asp:TextBox ID="Email" runat="server" CssClass="emailEntry form-control"></asp:TextBox>
            <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" 
            CssClass="failureNotification" ErrorMessage="E-mail is required." ToolTip="E-mail is required." 
-           ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
+           ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
       </div>
     </div>
 
     <div class="form-group">
-         <asp:Label ID="lblPassword" runat="server" AssociatedControlID="Password" CssClass="col-lg-3 control-label">Teléfono:</asp:Label>
+         <asp:Label ID="lblPassword" runat="server" AssociatedControlID="txtTel" CssClass="col-lg-3 control-label">Teléfono:</asp:Label>
          <div class="col-lg-9 clearfix">
-              <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry form-control" TextMode="Password"></asp:TextBox>
-              <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" 
+              <asp:TextBox ID="txtTel" runat="server" CssClass="textEntry form-control" ></asp:TextBox>
+              <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="txtTel" 
               CssClass="failureNotification" ErrorMessage="Password is required." ToolTip="Password is required." 
-              ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
+              ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
          </div>
     </div><br />
          
@@ -83,6 +85,6 @@
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
     ConnectionString="<%$ ConnectionStrings:JuguemosConnectionString %>" 
     SelectCommand="SELECT * FROM [Cancha]"></asp:SqlDataSource>
-
+</body>
 </asp:Content>
 
