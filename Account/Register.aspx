@@ -41,20 +41,10 @@
 
         <div class="col-sm-6">
         <div class="form-group">
-          <asp:Label ID="lblNombre" runat="server" AssociatedControlID="UserName" CssClass="col-lg-3 control-label">Nombre:</asp:Label>
+          <asp:Label ID="lblNombre" runat="server" AssociatedControlID="UserName" CssClass="col-lg-3 control-label">Usuario:</asp:Label>
           <div class="col-lg-9">
                <asp:TextBox ID="UserName" runat="server" CssClass="textEntry form-control"></asp:TextBox>
                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" 
-               CssClass="failureNotification" ErrorMessage="User Name is required." ToolTip="User Name is required." 
-               ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <asp:Label ID="lblApellido" runat="server" AssociatedControlID="txtApellido" CssClass="col-lg-3 control-label">Apellido:</asp:Label>
-          <div class="col-lg-9">
-               <asp:TextBox ID="txtApellido" runat="server" CssClass="textEntry form-control"></asp:TextBox>
-               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtApellido" 
                CssClass="failureNotification" ErrorMessage="User Name is required." ToolTip="User Name is required." 
                ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
           </div>
@@ -92,6 +82,9 @@
                      ValidationGroup="RegisterUserValidationGroup">*</asp:CompareValidator>
              </div>
         </div>
+
+        
+
         </div>
         <div class="col-sm-6">
         
@@ -104,7 +97,7 @@
                ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
           </div>
         </div>
-
+                
         <div class="form-group">
             <asp:Label ID="lblGenero" runat="server" AssociatedControlID="drdGenero" CssClass="col-sm-3 control-label">Genero:</asp:Label>
             <div class="col-sm-9">
@@ -222,24 +215,24 @@
                         
             </div>
             <div class="col-sm-3">
-                <asp:DropDownList ID="DropDownList2" runat="server"  CssClass="form-control input-md">
-                    <asp:ListItem>Enero</asp:ListItem>
-                    <asp:ListItem>Febrero</asp:ListItem>
-                    <asp:ListItem>Marzo</asp:ListItem>
-                    <asp:ListItem>Abril</asp:ListItem> 
-                    <asp:ListItem>Mayo</asp:ListItem>
-                    <asp:ListItem>Junio</asp:ListItem> 
-                    <asp:ListItem>Julio</asp:ListItem>
-                    <asp:ListItem>Agosto</asp:ListItem> 
-                    <asp:ListItem>Setiembre</asp:ListItem>
-                    <asp:ListItem>Octubre</asp:ListItem> 
-                    <asp:ListItem>Noviembre</asp:ListItem>
-                    <asp:ListItem>Diciembre</asp:ListItem>                                
+                <asp:DropDownList ID="drdMes" runat="server"  CssClass="form-control input-md">
+                    <asp:ListItem Value="1">Enero</asp:ListItem>
+                    <asp:ListItem Value="2">Febrero</asp:ListItem>
+                    <asp:ListItem Value="3">Marzo</asp:ListItem>
+                    <asp:ListItem Value="4">Abril</asp:ListItem> 
+                    <asp:ListItem Value="5">Mayo</asp:ListItem>
+                    <asp:ListItem Value="6">Junio</asp:ListItem> 
+                    <asp:ListItem Value="7">Julio</asp:ListItem>
+                    <asp:ListItem Value="8">Agosto</asp:ListItem> 
+                    <asp:ListItem Value="9">Setiembre</asp:ListItem>
+                    <asp:ListItem Value="10">Octubre</asp:ListItem> 
+                    <asp:ListItem Value="11">Noviembre</asp:ListItem>
+                    <asp:ListItem Value="12">Diciembre</asp:ListItem>                                
                 </asp:DropDownList>
                             
             </div>
             <div class="col-sm-3">
-                <asp:DropDownList ID="DropDownList3" runat="server"  CssClass="form-control input-md">
+                <asp:DropDownList ID="drdDia" runat="server"  CssClass="form-control input-md">
                     <asp:ListItem>1</asp:ListItem>  
                     <asp:ListItem>2</asp:ListItem>  
                     <asp:ListItem>3</asp:ListItem>  
@@ -294,12 +287,13 @@
         </div>
         </div>   
             </fieldset>
-                </ContentTemplate>
+        
+        </ContentTemplate>
                        <CustomNavigationTemplate>
                        </CustomNavigationTemplate>
             </asp:CreateUserWizardStep>
         </WizardSteps>
-    </asp:CreateUserWizard>
+    </asp:CreateUserWizard>        
     
     </form> 
     
