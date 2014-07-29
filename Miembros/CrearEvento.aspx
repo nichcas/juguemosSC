@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
  <body id="crear">  
  <asp:LoginName ID="LoginName1" runat="server" Visible="false" />
+     <asp:Label ID="lblUsuario" runat="server" Text="Label" Visible="false"></asp:Label>
      <fieldset class="col-sm-8 col-lg-offset-1">
 
         <legend>Detalles del Evento</legend>
@@ -152,7 +153,7 @@
                                 <div class="col-sm-9">
                                             
                                     <asp:DropDownList ID="drdParam" runat="server" CssClass="form-control input-md">
-                                        <asp:ListItem Value="">Mixto</asp:ListItem>
+                                        <asp:ListItem Value="Mixto">Mixto</asp:ListItem>
                                         <asp:ListItem Value="Hombres">Solo Hombres</asp:ListItem>
                                         <asp:ListItem Value="Mujeres">Solo Mujeres</asp:ListItem>                                                    
                                     </asp:DropDownList>    

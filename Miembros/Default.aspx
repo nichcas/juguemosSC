@@ -7,13 +7,17 @@
 <div class="container">
      
       <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="eventos"><br />
+
                     <p>Poner info de todos los eventos que hay</p>
                 <p>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
                         CellPadding="4" DataSourceID="EventosDS" ForeColor="Black" 
-                        GridLines="Horizontal">
+                        GridLines="Horizontal" Width="90%">
                         <Columns>
+                            <asp:HyperLinkField DataNavigateUrlFields="id_evento" 
+                                DataNavigateUrlFormatString="VerEvento.aspx?id_evento={0}" 
+                                DataTextField="id_evento" HeaderText="Ver" />
                             <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha">
                             <HeaderStyle HorizontalAlign="Center" />
                             </asp:BoundField>
@@ -46,14 +50,15 @@
                     </asp:GridView>
                     <asp:SqlDataSource ID="EventosDS" runat="server" 
                         ConnectionString="<%$ ConnectionStrings:JuguemosConnectionString %>" 
-                        SelectCommand="SELECT Crear_Evento.fecha, Crear_Evento.hora, Crear_Evento.cant_participantes, Crear_Evento.edadMin, Crear_Evento.edadMax, Cancha.descripcion FROM Crear_Evento INNER JOIN Cancha ON Crear_Evento.id_cancha = Cancha.id_cancha">
+                        
+                        SelectCommand="SELECT Crear_Evento.fecha, Crear_Evento.hora, Crear_Evento.cant_participantes, Crear_Evento.edadMin, Crear_Evento.edadMax, Cancha.descripcion, Crear_Evento.id_evento FROM Crear_Evento INNER JOIN Cancha ON Crear_Evento.id_cancha = Cancha.id_cancha">
                     </asp:SqlDataSource>
                 </p>
                     
                     
       </div>
                         
-     
+ </div>    
  </body>
 </asp:Content>
 

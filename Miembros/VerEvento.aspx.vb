@@ -1,5 +1,5 @@
 ﻿
-Partial Class Admin_index
+Partial Class Miembros_VerEvento
     Inherits System.Web.UI.Page
 
 End Class

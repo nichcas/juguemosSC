@@ -1,0 +1,119 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Admin.master.vb" Inherits="Site" %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head runat="server">
+      
+  <script src="//code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+      
+  <title>Juguemos</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="../css/myStyle.css" rel="stylesheet" type="text/css" />
+    
+<script type="text/javascript" >
+
+        $(function () {
+
+            //highlight the current nav
+
+            $("#disponible a:contains('Eventos Disponibles')").parent().addClass('active');
+            $("#crear a:contains('Crear Eventos')").parent().addClass('active');
+            $("#misEventos a:contains('Mis Eventos')").parent().addClass('active');
+            $("#perfil a:contains('Mi Perfil')").parent().addClass('active');
+          
+
+        })
+
+    </script>
+
+
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../Default.aspx">
+              <img src="../imagenes/logoPeq.fw.png" alt="Logo de Juguemos" /></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../Default.aspx">Inicio</a></li>
+            <li><a href="../Contact.aspx">Contáctenos</a></li>            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                         <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> 
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <%--Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!--%>
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+        
+         		<div class="main">
+         			<div class="container">
+         				<div class="row col-lg-3 fondo">
+         					<center>
+         						<h3>Bienvenido/a <span class="bold">
+         							<asp:LoginName ID="HeadLoginName" runat="server"/>
+         						</span>
+                                !</h3>
+         					</center>
+         					<center>
+         						<img src="../imagenes/ImagePlaceholder1.fw.png" alt=""/>
+         					</center>
+         					<br/>
+         					<ul class="nav nav-pills nav-stacked">
+         						<li>
+         							<a href="Default.aspx">Eventos Disponibles</a>
+         						</li>
+         						<li>
+         							<a href="CrearEvento.aspx">Crear Eventos</a>
+         						</li>
+         						<li>
+         							<a href="MisEventos.aspx">Mis Eventos</a>                                    							
+         						</li>
+                                <li>
+         							<a href="Perfil.aspx">Mi Perfil</a>                                    						
+         						</li>
+         					</ul>
+                            <br />
+         					<!--nav nav-tabs-->
+         				</div>
+         				<asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+         			</div>
+         			<div class="clear">
+         			</div>
+         		</div>
+         	
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

@@ -7,6 +7,10 @@ Partial Class Miembros_CrearEvento
 
     Dim dias As Integer
 
+    Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        Me.lblUsuario.Text = LoginName1.Page.User.Identity.Name
+    End Sub
+
     Protected Sub Calendar1_DayRender(sender As Object, e As System.Web.UI.WebControls.DayRenderEventArgs) Handles Calendar1.DayRender
         dias = 7
 
@@ -33,17 +37,16 @@ Partial Class Miembros_CrearEvento
     
     Protected Sub btnCrear_Click(sender As Object, e As System.EventArgs) Handles btnCrear.Click
 
-        Dim usuario As String
-        usuario = LoginName1.Page.User.Identity.Name
-
-        Dim fecha As String = txtFecha.Text
-        DateTime.Parse(fecha)
+        'Dim fecha As String = txtFecha.Text
+        'DateTime.Parse(fecha)
 
         Dim cmd As SqlCommand
         con.Open()
-        cmd = New SqlCommand("INSERT INTO Crear_Evento VALUES('" + usuario + "' ,'" + fecha + "' , '" + drdHora.SelectedValue + "', '" + drdParticipantes.SelectedValue + "', '" + txtMin.Text + "',  '" + txtMax.Text + "','" + drdParam.SelectedValue + "',  '" + drdCancha.SelectedValue + "')", con)
+        cmd = New SqlCommand(String.Format("INSERT INTO Crear_Evento VALUES('{0}', '{1}','{2}', '{3}','{4}','{5}','{6}','{7}')", lblUsuario.Text, txtFecha.Text, drdHora.SelectedValue, drdParticipantes.SelectedValue, txtMin.Text, txtMax.Text, drdParam.SelectedValue, drdCancha.SelectedValue), con)
         cmd.ExecuteNonQuery()
         con.Close()
 
     End Sub
+
+   
 End Class
