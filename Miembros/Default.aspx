@@ -8,7 +8,7 @@
      
       <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="eventos"><br />
 
-                    <p>Poner info de todos los eventos que hay</p>
+                    
                 <p>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
@@ -18,7 +18,8 @@
                             <asp:HyperLinkField DataNavigateUrlFields="id_evento" 
                                 DataNavigateUrlFormatString="VerEvento.aspx?id_evento={0}" 
                                 DataTextField="id_evento" HeaderText="Ver" />
-                            <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha">
+                            <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha" 
+                                DataFormatString="{0:d}">
                             <HeaderStyle HorizontalAlign="Center" />
                             </asp:BoundField>
                             <asp:BoundField DataField="hora" HeaderText="Hora" SortExpression="hora">
@@ -36,7 +37,7 @@
                                 SortExpression="edadMax">
                             <ItemStyle HorizontalAlign="Center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="descripcion" HeaderText="descripcion" 
+                            <asp:BoundField DataField="descripcion" HeaderText="Cancha" 
                                 SortExpression="descripcion" />
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

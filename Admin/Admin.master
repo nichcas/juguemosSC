@@ -24,12 +24,10 @@
 
             //highlight the current nav
 
-            $("#disponible a:contains('Eventos Disponibles')").parent().addClass('active');
-            $("#crear a:contains('Crear Eventos')").parent().addClass('active');
-            $("#misEventos a:contains('Mis Eventos')").parent().addClass('active');
-            $("#perfil a:contains('Mi Perfil')").parent().addClass('active');
-          
-
+            $("#usuario a:contains('Estado de Usuarios')").parent().addClass('active');
+            $("#evento a:contains('Estado de Eventos')").parent().addClass('active');
+            $("#canchas a:contains('Editar Canchas')").parent().addClass('active');
+            
         })
 
     </script>
@@ -85,22 +83,20 @@
                                 !</h3>
          					</center>
          					<center>
-         						<img src="../imagenes/ImagePlaceholder1.fw.png" alt=""/>
+         						<img src="../imagenes/AreaAdmin.fw.png" alt=""/>
          					</center>
          					<br/>
          					<ul class="nav nav-pills nav-stacked">
          						<li>
-         							<a href="Default.aspx">Eventos Disponibles</a>
+         							<a href="Default.aspx">Estado de Usuarios</a>
          						</li>
          						<li>
-         							<a href="CrearEvento.aspx">Crear Eventos</a>
+         							<a href="EstadoEvento.aspx">Estado de Eventos</a>
          						</li>
          						<li>
-         							<a href="MisEventos.aspx">Mis Eventos</a>                                    							
+         							<a href="EditCanchas.aspx">Editar Canchas</a>                                    							
          						</li>
-                                <li>
-         							<a href="Perfil.aspx">Mi Perfil</a>                                    						
-         						</li>
+                                
          					</ul>
                             <br />
          					<!--nav nav-tabs-->
