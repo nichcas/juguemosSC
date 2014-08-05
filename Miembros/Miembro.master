@@ -21,20 +21,14 @@
 <script type="text/javascript" >
 
         $(function () {
-
             //highlight the current nav
-
             $("#disponible a:contains('Eventos Disponibles')").parent().addClass('active');
             $("#crear a:contains('Crear Eventos')").parent().addClass('active');
             $("#misEventos a:contains('Mis Eventos')").parent().addClass('active');
             $("#perfil a:contains('Mi Perfil')").parent().addClass('active');
-          
-
         })
 
     </script>
-
-
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
@@ -81,12 +75,38 @@
          					<center>
          						<h3>Bienvenido/a <span class="bold">
          							<asp:LoginName ID="HeadLoginName" runat="server"/>
+                                    <asp:Label ID="lblUsuario" runat="server" Text="Label" Visible="False"></asp:Label>
          						</span>
                                 !</h3>
          					</center>
          					<center>
-         						<img src="../imagenes/ImagePlaceholder1.fw.png" alt=""/>
+                                 <asp:DetailsView ID="DetailsView1" runat="server" 
+                                     AutoGenerateRows="False" BackColor="White" BorderColor="#CCCCCC" 
+                                     BorderStyle="None" CellPadding="0" DataKeyNames="id_usuario" 
+                                     DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None">
+                                     <EditRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                                     <Fields>
+                                         <asp:ImageField DataImageUrlField="foto">
+                                             <ControlStyle Height="200px" Width="200px" BorderStyle="None" />
+                                             <FooterStyle BorderStyle="None" HorizontalAlign="Justify" />
+                                             <HeaderStyle BorderStyle="None" Wrap="False" />
+                                             <ItemStyle BorderStyle="None" HorizontalAlign="Justify" />
+                                         </asp:ImageField>
+                                     </Fields>
+                                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" Wrap="False" />
+                                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                     <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Justify" />
+                                 </asp:DetailsView>
+         					     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                     ConnectionString="<%$ ConnectionStrings:JuguemosConnectionString %>" 
+                                     SelectCommand="SELECT * FROM [Usuario] WHERE ([username] = @username)">
+                                     <SelectParameters>
+                                         <asp:ControlParameter ControlID="lblUsuario" Name="username" 
+                                             PropertyName="Text" Type="String" />
+                                     </SelectParameters>
+                                 </asp:SqlDataSource>
          					</center>
+
          					<br/>
          					<ul class="nav nav-pills nav-stacked">
          						<li>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="CrearEvento.aspx.vb" Inherits="Miembros_CrearEvento" %>
+﻿<%@ Page Title="Crear Eventos" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="CrearEvento.aspx.vb" Inherits="Miembros_CrearEvento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
@@ -63,11 +63,7 @@
                     <asp:Label ID="lblHora" runat="server" AssociatedControlID="drdHora" CssClass="col-sm-3 control-label">Hora:</asp:Label>
                     <div class="col-sm-9">
                         <asp:DropDownList ID="drdHora" runat="server" CssClass="form-control input-md">
-                            <asp:ListItem Value="06:00:00">6:00 AM</asp:ListItem>
-                            <asp:ListItem Value="07:00:00">7:00 AM</asp:ListItem>
-                            <asp:ListItem Value="08:00:00">8:00 AM</asp:ListItem>
-                            <asp:ListItem Value="09:00:00">9:00 AM</asp:ListItem>
-                            <asp:ListItem Value="10:00:00">10:00 AM</asp:ListItem>
+                            
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="drdCancha" 
                         CssClass="failureNotification" ErrorMessage="Debe de ingresar una fecha." ToolTip="La fecha es requerida." 

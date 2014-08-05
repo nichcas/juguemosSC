@@ -46,15 +46,28 @@ Partial Class Account_Register
         Dim str As String
         Dim path As String
 
-        str = FU.FileName
-        FU.PostedFile.SaveAs(Server.MapPath(".") + "//../fotos//" + str)
-        path = "~//fotos//" + str.ToString()
+        If FU.HasFile Then
 
-        Dim cmd As SqlCommand
-        con.Open()
-        cmd = New SqlCommand(String.Format("INSERT INTO Usuario VALUES('{0}', '{1}','{2}', '{3}','{4}','{5}','{6}')", Username.Text, email.Text, Tel.Text, Genero.SelectedValue, fecha, Edad, path), con)
-        cmd.ExecuteNonQuery()
-        con.Close()
+            str = FU.FileName
+            FU.PostedFile.SaveAs(Server.MapPath(".") + "//../fotos//" + str)
+            path = "~//fotos//" + str.ToString()
+
+            Dim cmd As SqlCommand
+            con.Open()
+            cmd = New SqlCommand(String.Format("INSERT INTO Usuario VALUES('{0}', '{1}','{2}', '{3}','{4}','{5}','{6}')", Username.Text, email.Text, Tel.Text, Genero.SelectedValue, fecha, Edad, path), con)
+            cmd.ExecuteNonQuery()
+            con.Close()
+        Else
+            path = "~//imagenes/ImagePlaceholder1.fw.png"
+
+            Dim cmd As SqlCommand
+            con.Open()
+            cmd = New SqlCommand(String.Format("INSERT INTO Usuario VALUES('{0}', '{1}','{2}', '{3}','{4}','{5}','{6}')", Username.Text, email.Text, Tel.Text, Genero.SelectedValue, fecha, Edad, path), con)
+            cmd.ExecuteNonQuery()
+            con.Close()
+        End If
+
+        
 
 
         Dim continueUrl As String = RegisterUser.ContinueDestinationPageUrl

@@ -22,12 +22,13 @@
     <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false" DestinationPageUrl="~/Miembros/Default.aspx">
         <LayoutTemplate>
             <span class="failureNotification">
-                <asp:Literal ID="FailureText" runat="server"></asp:Literal>
+                <asp:Literal ID="FailureText" runat="server" ></asp:Literal>
             </span>
-            <asp:ValidationSummary ID="LoginUserValidationSummary" runat="server" CssClass="failureNotification" 
+            <asp:ValidationSummary ID="LoginUserValidationSummary" runat="server" CssClass="failureNotification alert alert-danger" 
                  ValidationGroup="LoginUserValidationGroup"/>
             <div class="accountInfo">
 
+            
             <fieldset class="login">
                     <legend>Información de la Cuenta</legend>
     <div class="form-group">
@@ -35,17 +36,18 @@
       <div class="col-lg-9">
            <asp:TextBox ID="UserName" runat="server" CssClass="textEntry form-control"></asp:TextBox>
            <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" 
-           CssClass="failureNotification" ErrorMessage="User Name is required." ToolTip="User Name is required." 
-           ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
+           CssClass="failureNotification" 
+               ErrorMessage="Debe ingresar su nombre de usuario." ToolTip="Ingresar nombre de usuario" 
+           ValidationGroup="LoginUserValidationGroup"></asp:RequiredFieldValidator>
       </div>
     </div>
     <div class="form-group">
          <asp:Label ID="lblPassword" runat="server" AssociatedControlID="Password" CssClass="col-lg-3 control-label">Password:</asp:Label>
          <div class="col-lg-9 clearfix">
               <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry form-control" TextMode="Password"></asp:TextBox>
-              <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" 
-              CssClass="failureNotification" ErrorMessage="Password is required." ToolTip="Password is required." 
-              ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
+              <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                  CssClass="failureNotification" ErrorMessage="Debe ingresar la contraseña." ToolTip="Ingresar la contraseña."
+                  ValidationGroup="LoginUserValidationGroup"></asp:RequiredFieldValidator>
       </div>
     </div>
          <div class="form-group clearfix">

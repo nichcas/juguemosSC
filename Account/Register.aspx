@@ -32,7 +32,7 @@
                     <span class="failureNotification">
                         <asp:Literal ID="ErrorMessage" runat="server"></asp:Literal>
                     </span>
-                    <asp:ValidationSummary ID="RegisterUserValidationSummary" runat="server" CssClass="failureNotification" 
+                    <asp:ValidationSummary ID="RegisterUserValidationSummary" runat="server" CssClass="failureNotification alert alert-danger" 
                          ValidationGroup="RegisterUserValidationGroup"/>
                     <div class="accountInfo">
 
@@ -45,8 +45,8 @@
           <div class="col-lg-9">
                <asp:TextBox ID="UserName" runat="server" CssClass="textEntry form-control"></asp:TextBox>
                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" 
-               CssClass="failureNotification" ErrorMessage="User Name is required." ToolTip="User Name is required." 
-               ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
+               CssClass="failureNotification" ErrorMessage="Debe ingresar su nombre de usuario." ToolTip="Ingresar nombre de usuario." 
+               ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
           </div>
         </div>
 
@@ -55,8 +55,8 @@
           <div class="col-lg-9">
                <asp:TextBox ID="Email" runat="server" CssClass="textEntry form-control"></asp:TextBox>
                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" 
-               CssClass="failureNotification" ErrorMessage="E-mail is required." ToolTip="E-mail is required." 
-               ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
+               CssClass="failureNotification" ErrorMessage="Debe de ingresar correo electrónico." ToolTip="Ingresar correo electrónico." 
+               ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
           </div>
         </div>
 
@@ -65,8 +65,8 @@
              <div class="col-lg-9 clearfix">
                   <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry form-control" TextMode="Password"></asp:TextBox>
                   <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" 
-                  CssClass="failureNotification" ErrorMessage="Password is required." ToolTip="Password is required." 
-                  ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
+                  CssClass="failureNotification" ErrorMessage="Debe ingresar una contraseña." ToolTip="Ingresar una contraseña." 
+                  ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
              </div>
         </div>
          
@@ -75,11 +75,11 @@
              <div class="col-lg-9 clearfix">
                   <asp:TextBox ID="ConfirmPassword" runat="server" CssClass="passwordEntry form-control" TextMode="Password"></asp:TextBox>
                   <asp:RequiredFieldValidator ControlToValidate="ConfirmPassword" CssClass="failureNotification" Display="Dynamic" 
-                     ErrorMessage="Confirm Password is required." ID="ConfirmPasswordRequired" runat="server" 
-                     ToolTip="Confirm Password is required." ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
+                     ErrorMessage="Debe confirmar la contraseña." ID="ConfirmPasswordRequired" runat="server" 
+                     ToolTip="Confirmar la contraseña." ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
                   <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" 
-                     CssClass="failureNotification" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match."
-                     ValidationGroup="RegisterUserValidationGroup">*</asp:CompareValidator>
+                     CssClass="failureNotification" Display="Dynamic" ErrorMessage="La contraseña y la confirmación no son identicas."
+                     ValidationGroup="RegisterUserValidationGroup"></asp:CompareValidator>
              </div>
         </div>
 
@@ -92,10 +92,8 @@
           <asp:Label ID="lblTel" runat="server" AssociatedControlID="txtTel" CssClass="col-lg-3 control-label">Teléfono:</asp:Label>
           <div class="col-lg-9">
                <asp:TextBox ID="txtTel" runat="server" CssClass="textEntry form-control"></asp:TextBox>
-               <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTel" 
-               CssClass="failureNotification" ErrorMessage="User Name is required." ToolTip="User Name is required." 
-               ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-          </div>
+               <br />
+        </div>
         </div>
                 
         <div class="form-group">
@@ -105,9 +103,7 @@
                     <asp:ListItem>Hombre</asp:ListItem>
                     <asp:ListItem>Mujer</asp:ListItem>                               
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="drdGenero" 
-                    CssClass="failureNotification" ErrorMessage="Debe de ingresar una fecha." ToolTip="La fecha es requerida." 
-                    ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
+                <br />
             </div>
         </div>
 

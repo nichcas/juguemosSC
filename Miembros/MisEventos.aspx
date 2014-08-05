@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="MisEventos.aspx.vb" Inherits="Miembros_Mensajes" %>
+﻿<%@ Page Title="Mis Eventos" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="MisEventos.aspx.vb" Inherits="Miembros_Mensajes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
  <body id="misEventos">
     <div class="container">
-        <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="miembro"><br />
+        <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="miembro">
             <asp:LoginName ID="LoginName1" runat="server" Visible="false"/>
             <asp:Label ID="lblUsuario" runat="server" Text="Label" Visible="False"></asp:Label>
-
+            <legend>Mis Eventos</legend>
             <asp:GridView ID="GridView1" runat="server" BackColor="White" 
                 BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
                 ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" 

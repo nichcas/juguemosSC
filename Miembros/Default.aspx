@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="Miembros_index" %>
+﻿<%@ Page Title="Eventos Disponibles" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="Miembros_index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
@@ -6,8 +6,8 @@
     <body id="disponible">
 <div class="container">
      
-      <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="eventos"><br />
-
+      <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="eventos">
+      <legend>Eventos Disponibles</legend>
                     
                 <p>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 

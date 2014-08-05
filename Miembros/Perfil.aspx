@@ -1,17 +1,19 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="Perfil.aspx.vb" Inherits="Miembros_Mensajes" %>
+﻿<%@ Page Title="Mi Perfil" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="Perfil.aspx.vb" Inherits="Miembros_Mensajes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-<body id="perfil" >
+    <body id="perfil">
     <div class="container" >
-        <div class="tab-pane col-lg-8 col-lg-offset-1 active"><br />
+        <div class="tab-pane col-lg-8 col-lg-offset-1 active">
             <asp:LoginName ID="LoginName1" runat="server" Visible="false"/>
             <asp:Label ID="lblUsuario" runat="server" Text="Label" Visible="False"></asp:Label>
 
+            <legend>Mi Perfil</legend>
+
             <asp:DetailsView ID="DetailsView2" runat="server" Height="50px" Width="125px" 
                 AutoGenerateRows="False" DataSourceID="FotoDS" BackColor="White" 
-                BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
+                BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="0px" CellPadding="0" 
                 ForeColor="Black" GridLines="Horizontal">
                 <EditRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 <Fields>
@@ -35,7 +37,7 @@
             <br />
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <br />
-            <asp:Button ID="btnImagen" runat="server" Text="Cambiar Imagen" CssClass="btn btn-primary" />
+            <asp:Button ID="btnImagen" runat="server" Text="Cambiar Imagen" CssClass="btn btn-primary"  />
             <br />
             <asp:Label ID="lblTexto" runat="server" Text=""></asp:Label>
             <br />

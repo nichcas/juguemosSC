@@ -35,9 +35,10 @@ Partial Class Miembros_Mensajes
 
             cmd.ExecuteNonQuery()
             con.Close()
-
+            Response.Redirect(Request.RawUrl)
         Else
-            lblTexto.Text = "Por favor suba una imagen"
+            lblTexto.Text = "Por favor seleccione una imagen"
+
         End If
 
     End Sub

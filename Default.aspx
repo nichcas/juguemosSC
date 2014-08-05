@@ -4,7 +4,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent" >
-    <body id="inicio">
+    <body>
      <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -49,7 +49,9 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
-
-    </body>
+        <br /><br />
+        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger btn-sm" 
+            NavigateUrl="~/Admin/Default.aspx" >HyperLink</asp:HyperLink>
+</body>
 
 </asp:Content>
