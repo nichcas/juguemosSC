@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <body id="disponible">
+    <body>
 <div class="container">
      
       <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="eventos">
@@ -13,11 +13,13 @@
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
                         CellPadding="4" DataSourceID="EventosDS" ForeColor="Black" 
-                        GridLines="Horizontal" Width="90%">
+                        GridLines="Horizontal" Width="90%" AllowSorting="True">
                         <Columns>
                             <asp:HyperLinkField DataNavigateUrlFields="id_evento" 
                                 DataNavigateUrlFormatString="VerEvento.aspx?id_evento={0}" 
-                                DataTextField="id_evento" HeaderText="Ver" />
+                                DataTextField="id_evento" HeaderText="Ver" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:HyperLinkField>
                             <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha" 
                                 DataFormatString="{0:d}">
                             <HeaderStyle HorizontalAlign="Center" />

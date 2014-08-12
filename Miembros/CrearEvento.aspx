@@ -8,10 +8,10 @@
      <asp:Label ID="lblUsuario" runat="server" Text="Label" Visible="false"></asp:Label>
      <fieldset class="col-sm-8 col-lg-offset-1">
 
-        <legend>Detalles del Evento</legend>
+  
                       
             <form class="form-horizontal" action="">
-
+<legend>Detalles del Evento</legend>
                 <div class="form-group">
                     <asp:Label ID="lblDep" runat="server" AssociatedControlID="drdDeportes" CssClass="col-sm-3 control-label">Deporte:</asp:Label>
                     <div class="col-sm-9">
@@ -32,7 +32,8 @@
                     <asp:Label ID="lblCancha" runat="server" AssociatedControlID="drdCancha" CssClass="col-sm-3 control-label">Cancha:</asp:Label>
                     <div class="col-sm-9">
                         <asp:DropDownList ID="drdCancha" runat="server" DataSourceID="CanchasDS" 
-                            DataTextField="descripcion" DataValueField="id_cancha" CssClass="form-control input-md">
+                            DataTextField="descripcion" DataValueField="id_cancha" 
+                            CssClass="form-control input-md" AutoPostBack="True">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="CanchasDS" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:JuguemosConnectionString %>" 
@@ -62,9 +63,21 @@
                 <div class="form-group">
                     <asp:Label ID="lblHora" runat="server" AssociatedControlID="drdHora" CssClass="col-sm-3 control-label">Hora:</asp:Label>
                     <div class="col-sm-9">
-                        <asp:DropDownList ID="drdHora" runat="server" CssClass="form-control input-md">
+                        <asp:DropDownList ID="drdHora" runat="server" CssClass="form-control input-md" 
+                            DataSourceID="HoraDS" DataTextField="hora" DataValueField="hora" 
+                            ToolTip="Llenar fecha y cancha">
                             
                         </asp:DropDownList>
+                        <asp:SqlDataSource ID="HoraDS" runat="server" 
+                            ConnectionString="<%$ ConnectionStrings:JuguemosConnectionString %>" 
+                            
+                            SelectCommand="SELECT hora FROM horas_diponibles WHERE (id_hora NOT IN (SELECT DATEPART(HOUR, ce.hora) AS Expr1 FROM Crear_Evento AS ce INNER JOIN Cancha AS c ON ce.id_cancha = c.id_cancha INNER JOIN EstadoEvento AS ee ON ce.id_evento = ee.id_evento WHERE (ce.id_cancha = @cancha) AND (ce.fecha = @fecha) AND (ee.estado = 1)))">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="drdCancha" Name="cancha" 
+                                    PropertyName="SelectedValue" />
+                                <asp:ControlParameter ControlID="txtFecha" Name="fecha" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="drdCancha" 
                         CssClass="failureNotification" ErrorMessage="Debe de ingresar una fecha." ToolTip="La fecha es requerida." 
                         ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
@@ -123,10 +136,12 @@
                     
                 <div class="panel-group" id="accordion">
                             
-                    <legend><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">                    
+                    
+                    <legend>       
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">                    
                         Restricciones (Opcionales) <span class="glyphicon glyphicon-chevron-down pull-right"></span>
-                    </a></legend>
-                              
+                    </a></legend> 
+                             
                                
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
@@ -160,7 +175,7 @@
 
                         </div>
                     </div>
-                </div>
+                
                  
                 <div class="col-sm-9 col-sm-offset-3 ">                          
                     <asp:Button ID="btnCrear" runat="server" Text="Crear Evento" CssClass="btn btn-primary"  />

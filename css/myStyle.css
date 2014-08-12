@@ -16,3 +16,11 @@
     border:1px solid #345578;
     padding:3px;
 }
+
+.side
+{
+    float:left;
+    width:25%;
+    padding-right:25px;
+    
+}
