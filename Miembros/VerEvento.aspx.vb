@@ -9,6 +9,7 @@ Partial Class Miembros_VerEvento
     Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         Me.lblUsuario.Text = LoginName1.Page.User.Identity.Name
         Me.lblEvento.Text = Request.QueryString("id_evento")
+        Me.Button2.Visible = False
 
         Dim cmd As SqlCommand
         Dim cmd2 As SqlCommand
@@ -23,6 +24,7 @@ Partial Class Miembros_VerEvento
         Dim HasRows As Boolean = dr.HasRows
         If HasRows = True Then
             Button1.Enabled = False
+            Button2.Visible = True
         End If
         con.Close()
         con.Open()
@@ -55,4 +57,12 @@ Partial Class Miembros_VerEvento
     End Sub
 
 
+    Protected Sub Button2_Click(sender As Object, e As System.EventArgs) Handles Button2.Click
+        Dim cmd As SqlCommand
+        con.Open()
+        cmd = New SqlCommand(String.Format("DELETE FROM ParticipantesXevento WHERE username= " & "'" & lblUsuario.Text & "'" & " AND id_evento=" & lblEvento.Text & ""), con)
+        cmd.ExecuteNonQuery()
+        con.Close()
+        Response.Redirect(Request.RawUrl)
+    End Sub
 End Class

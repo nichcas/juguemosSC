@@ -71,8 +71,8 @@
         </asp:SqlDataSource>
     <br /><br />
 
-        <asp:Button ID="Button1" runat="server" Text="Participar" CssClass="btn btn-primary "/>&nbsp;&nbsp;
-        
+        <asp:Button ID="Button1" runat="server" Text="Participar" CssClass="btn btn-primary "/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="btn btn-primary " />
     </div>
 </div>
 </asp:Content>

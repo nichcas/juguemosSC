@@ -1,18 +1,45 @@
-﻿<%@ Page Title="About Us" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false"
+﻿<%@ Page Title="About Us" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false"
     CodeFile="About.aspx.vb" Inherits="About" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+   
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<body id="nosotros">
     <div class="container">
     <div class="col-lg-12">
         <img src="imagenes/bannerBolas1.fw.png" width="100%" />
     </div>
     <h2>
-        About
+        Sobre Nosotros
+        
     </h2>
-    <p>
-        Put content here.
-    </p>
+    <hr />
+    
+    <div class= "col-md-8" >
+  
+     
+      <p class="block">
+        Juguemos Sports Club es el mejor club de Costa Rica. Sus amplias instalaciones ofrecen espacios para la recreación, el deporte, y sobre todo, momentos especiales de placentero descanso y convivencia social. Todo ello en un ambiente de armonía, seguro y lleno de refrescante naturaleza, lejos del cotidiano trajín laboral. 
+              
+       </p>
+        <p class="block">
+        
+         Ubicado en Cipreses de Curridabat, una zona geográfica privilegiada por su excepcional clima y razonable distancia, Juguemos Sport Club ofrece hermosos paisajes que invitan al sosiego, al ejercicio o simplemente a vivir a plenitud cada momento que se pasa en él. 
+               
+       </p>
+        <p class="block">
+        
+         Excelente servicio al cliente y mejora permanente de las instalaciones, donde los socios encuentran todo lo requerido para satisfacer sus gustos, le han permitido a Juguemps Sport Club mantenerse en el lugar de privilegio que hoy ocupa.
+      
+       </p>
+       </div>
+        <div class= "col-md-4" > 
+         <img alt="Club"  src="galeria/foto3.JPG" align="right"  width="85%"/> 
+        
+    
     </div>
+
+  </div>
+  </body>
 </asp:Content>

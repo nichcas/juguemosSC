@@ -37,7 +37,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="Default.aspx">Inicio</a></li>
-            <li><a href="contact.aspx">Contáctenos</a></li>  
+            <li><a href="Galeria.aspx">Galería</a></li>
+            <li><a href="About.aspx">Sobre Nosotros</a></li>
+            <li><a href="Contact.aspx">Contáctenos</a></li>  
                    
           </ul>
           <ul class="nav navbar-nav navbar-right"> 
@@ -68,7 +70,6 @@
         </div>
         
     <div class="footer container ">
-        footer
     </div>
     </form>  
      
