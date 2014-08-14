@@ -9,39 +9,38 @@ Partial Class Miembros_CrearEvento
 
     Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         Me.lblUsuario.Text = LoginName1.Page.User.Identity.Name
-        drdHora.Enabled = False
 
         'CargarDatos()
     End Sub
 
-    Private Sub CargarDatos()
+    'Private Sub CargarDatos()
 
-        Dim Cancha As Integer
-        Cancha = drdCancha.SelectedIndex
+    '    Dim Cancha As Integer
+    '    Cancha = drdCancha.SelectedIndex
 
-        Dim fecha As String = "2014-08-09"
-        ' DateTime.Parse(fecha)
+    '    Dim fecha As String = "2014-08-09"
+    '    ' DateTime.Parse(fecha)
 
-        Dim dispo As String
-        dispo = "select * from horas_diponibles where hora NOT IN(select DATEPART(HOUR,ce.hora) from Crear_Evento as ce inner join Cancha as c on ce.id_cancha=c.id_cancha inner join EstadoEvento as ee on ce.id_evento=ee.id_evento where ce.id_cancha=" & "'" & Cancha & "'" & " and ce.fecha='2014-08-09'  and ee.estado=1 )"
+    '    Dim dispo As String
+    '    dispo = "select * from horas_diponibles where hora NOT IN(select DATEPART(HOUR,ce.hora) from Crear_Evento as ce inner join Cancha as c on ce.id_cancha=c.id_cancha inner join EstadoEvento as ee on ce.id_evento=ee.id_evento where ce.id_cancha=" & "'" & Cancha & "'" & " and ce.fecha='2014-08-09'  and ee.estado=1 )"
 
-        Dim sqlQuery As String = dispo
+    '    Dim sqlQuery As String = dispo
 
-        Dim adapter As New SqlDataAdapter(sqlQuery, con)
+    '    Dim adapter As New SqlDataAdapter(sqlQuery, con)
 
-        Dim datos As New DataTable
+    '    Dim datos As New DataTable
 
-        adapter.Fill(datos)
+    '    adapter.Fill(datos)
 
-        Me.drdHora.DataSource = datos
+    '    Me.drdHora.DataSource = datos
 
-        Me.drdHora.DataMember = "hora"
+    '    Me.drdHora.DataMember = "hora"
 
-        Me.drdHora.DataValueField = "hora"
+    '    Me.drdHora.DataValueField = "hora"
 
-        Me.drdHora.DataBind()
+    '    Me.drdHora.DataBind()
 
-    End Sub
+    'End Sub
 
 
     Protected Sub Calendar1_DayRender(sender As Object, e As System.Web.UI.WebControls.DayRenderEventArgs) Handles Calendar1.DayRender
@@ -64,6 +63,7 @@ Partial Class Miembros_CrearEvento
     Protected Sub Calendar1_SelectionChanged(sender As Object, e As System.EventArgs) Handles Calendar1.SelectionChanged
 
         txtFecha.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd")
+        drdCancha.Enabled = True
 
     End Sub
 
@@ -86,5 +86,9 @@ Partial Class Miembros_CrearEvento
 
     Protected Sub drdCancha_SelectedIndexChanged(sender As Object, e As System.EventArgs) Handles drdCancha.SelectedIndexChanged
         drdHora.Enabled = True
+    End Sub
+
+    Protected Sub drdDeportes_SelectedIndexChanged(sender As Object, e As System.EventArgs) Handles drdDeportes.SelectedIndexChanged
+        drdCancha.Enabled = True
     End Sub
 End Class

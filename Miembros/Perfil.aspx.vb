@@ -9,6 +9,12 @@ Partial Class Miembros_Mensajes
     Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         Me.lblUsuario.Text = LoginName1.Page.User.Identity.Name
     End Sub
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
 
     Protected Sub btnImagen_Click(sender As Object, e As System.EventArgs) Handles btnImagen.Click
 

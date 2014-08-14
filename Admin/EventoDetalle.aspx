@@ -33,7 +33,8 @@
               InsertCommand="INSERT INTO [EstadoEvento] ([id_evento], [estado]) VALUES (@id_evento, @estado)" 
               OldValuesParameterFormatString="original_{0}" 
               SelectCommand="SELECT * FROM [EstadoEvento] WHERE ([id_evento] = @id_evento)" 
-              UpdateCommand="UPDATE [EstadoEvento] SET [id_evento] = @id_evento, [estado] = @estado WHERE [id_estadoE] = @original_id_estadoE AND (([id_evento] = @original_id_evento) OR ([id_evento] IS NULL AND @original_id_evento IS NULL)) AND (([estado] = @original_estado) OR ([estado] IS NULL AND @original_estado IS NULL))">
+              
+              UpdateCommand="UPDATE EstadoEvento SET estado = @estado WHERE (id_estadoE = @original_id_estadoE) AND (estado = @original_estado) OR (id_estadoE = @original_id_estadoE) AND (estado = @original_estado) AND (@original_id_evento IS NULL) OR (id_estadoE = @original_id_estadoE) AND (estado IS NULL) AND (@original_estado IS NULL) OR (id_estadoE = @original_id_estadoE) AND (id_evento IS NULL) AND (estado IS NULL) AND (@original_id_evento IS NULL) AND (@original_estado IS NULL)">
               <DeleteParameters>
                   <asp:Parameter Name="original_id_estadoE" Type="Int32" />
                   <asp:Parameter Name="original_id_evento" Type="Int32" />
@@ -48,11 +49,10 @@
                       Type="Int32" />
               </SelectParameters>
               <UpdateParameters>
-                  <asp:Parameter Name="id_evento" Type="Int32" />
                   <asp:Parameter Name="estado" Type="String" />
                   <asp:Parameter Name="original_id_estadoE" Type="Int32" />
-                  <asp:Parameter Name="original_id_evento" Type="Int32" />
                   <asp:Parameter Name="original_estado" Type="String" />
+                  <asp:Parameter Name="original_id_evento" Type="Int32" />
               </UpdateParameters>
           </asp:SqlDataSource>
           <br />

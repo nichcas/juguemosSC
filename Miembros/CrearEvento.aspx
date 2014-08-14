@@ -12,8 +12,20 @@
                       
             <form class="form-horizontal" action="">
 <legend>Detalles del Evento</legend>
+
                 <div class="form-group">
-                    <asp:Label ID="lblDep" runat="server" AssociatedControlID="drdDeportes" CssClass="col-sm-3 control-label">Deporte:</asp:Label>
+                    <asp:Label ID="lblFecha" runat="server" AssociatedControlID="txtFecha" CssClass="col-sm-3 control-label"><span class="label label-info">Paso 1</span> Fecha:</asp:Label>
+                    <div class="col-sm-7">
+                        <asp:TextBox ID="txtFecha" runat="server" CssClass="textEntry form-control" placeholder="Usar el calendario" ReadOnly="True"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFecha" 
+                        CssClass="failureNotification" ErrorMessage="Debe de ingresar una fecha." ToolTip="La fecha es requerida." 
+                        ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-calendar"></span></button>
+                </div>
+
+                <div class="form-group">
+                    <asp:Label ID="lblDep" runat="server" AssociatedControlID="drdDeportes" CssClass="col-sm-3 control-label"><span class="label label-info">Paso 2</span> Deporte:</asp:Label>
                     <div class="col-sm-9">
                         <asp:DropDownList ID="drdDeportes" runat="server" AutoPostBack="True" 
                             DataSourceID="DeportesDS" DataTextField="descripcion" 
@@ -29,7 +41,7 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:Label ID="lblCancha" runat="server" AssociatedControlID="drdCancha" CssClass="col-sm-3 control-label">Cancha:</asp:Label>
+                    <asp:Label ID="lblCancha" runat="server" AssociatedControlID="drdCancha" CssClass="col-sm-3 control-label"><span class="label label-info">Paso 3</span> Cancha:</asp:Label>
                     <div class="col-sm-9">
                         <asp:DropDownList ID="drdCancha" runat="server" DataSourceID="CanchasDS" 
                             DataTextField="descripcion" DataValueField="id_cancha" 
@@ -49,19 +61,9 @@
                     </div>
                 </div>
 
+                
                 <div class="form-group">
-                    <asp:Label ID="lblFecha" runat="server" AssociatedControlID="txtFecha" CssClass="col-sm-3 control-label">Fecha:</asp:Label>
-                    <div class="col-sm-7">
-                        <asp:TextBox ID="txtFecha" runat="server" CssClass="textEntry form-control" placeholder="Usar el calendario" ReadOnly="True"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFecha" 
-                        CssClass="failureNotification" ErrorMessage="Debe de ingresar una fecha." ToolTip="La fecha es requerida." 
-                        ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
-                    </div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-calendar"></span></button>
-                </div>
-
-                <div class="form-group">
-                    <asp:Label ID="lblHora" runat="server" AssociatedControlID="drdHora" CssClass="col-sm-3 control-label">Hora:</asp:Label>
+                    <asp:Label ID="lblHora" runat="server" AssociatedControlID="drdHora" CssClass="col-sm-3 control-label"><span class="label label-info">Paso 4</span> Hora:</asp:Label>
                     <div class="col-sm-9">
                         <asp:DropDownList ID="drdHora" runat="server" CssClass="form-control input-md" 
                             DataSourceID="HoraDS" DataTextField="hora" DataValueField="hora" 
@@ -85,7 +87,7 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:Label ID="Label1" runat="server" AssociatedControlID="drdParticipantes" CssClass="col-sm-3 control-label">Participantes:</asp:Label>
+                    <asp:Label ID="Label1" runat="server" AssociatedControlID="drdParticipantes" CssClass="col-sm-3 control-label"><span class="label label-info">Paso 5</span> Participantes:</asp:Label>
                     <div class="col-sm-9">
                         <asp:DropDownList ID="drdParticipantes" runat="server" 
                             DataSourceID="ParticipantesDS" DataTextField="cantidad" 
