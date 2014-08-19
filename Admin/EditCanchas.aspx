@@ -3,12 +3,56 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-<body></body>
+<body id="canchas"></body>
 <div class="container">     
-    <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="eventos">
+    <div class="tab-pane col-lg-5 col-lg-offset-1 active" id="eventos">
+
+        <asp:DetailsView ID="DetailsView2" runat="server" AllowPaging="True" 
+            AutoGenerateRows="False" BackColor="White" BorderColor="#CCCCCC" 
+            BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id_deporte" 
+            DataSourceID="EditDeporteDS" ForeColor="Black" GridLines="Horizontal" 
+            Height="50px" Width="100%">
+            <EditRowStyle BackColor="#CCCCCC" Font-Bold="True" ForeColor="#3399F3" />
+            <Fields>
+                <asp:BoundField DataField="descripcion" HeaderText="Deporte" 
+                    SortExpression="descripcion" />
+                <asp:CommandField ShowDeleteButton="True" ShowInsertButton="True" 
+                    CancelText="Cancelar" DeleteText="Eliminar" EditText="Editar" NewText="Nuevo" 
+                    UpdateText="Actualizar" />
+            </Fields>
+            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+        </asp:DetailsView>
+        <asp:SqlDataSource ID="EditDeporteDS" runat="server" 
+            ConflictDetection="CompareAllValues" 
+            ConnectionString="<%$ ConnectionStrings:JuguemosConnectionString %>" 
+            DeleteCommand="DELETE FROM [Deporte] WHERE [id_deporte] = @original_id_deporte AND (([descripcion] = @original_descripcion) OR ([descripcion] IS NULL AND @original_descripcion IS NULL))" 
+            InsertCommand="INSERT INTO [Deporte] ([descripcion]) VALUES (@descripcion)" 
+            OldValuesParameterFormatString="original_{0}" 
+            SelectCommand="SELECT * FROM [Deporte]" 
+            UpdateCommand="UPDATE [Deporte] SET [descripcion] = @descripcion WHERE [id_deporte] = @original_id_deporte AND (([descripcion] = @original_descripcion) OR ([descripcion] IS NULL AND @original_descripcion IS NULL))">
+            <DeleteParameters>
+                <asp:Parameter Name="original_id_deporte" Type="Int32" />
+                <asp:Parameter Name="original_descripcion" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="descripcion" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="descripcion" Type="String" />
+                <asp:Parameter Name="original_id_deporte" Type="Int32" />
+                <asp:Parameter Name="original_descripcion" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Refrescar" CssClass="btn btn-primary btn-block" Width="100%"/>
+        <br />
+        <br />
+
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
             DataSourceID="DeporteDS" DataTextField="descripcion" 
-            DataValueField="id_deporte" CssClass="textEntry form-control" Width="50%">
+            DataValueField="id_deporte" CssClass="textEntry form-control" Width="100%">
         </asp:DropDownList>
         <br />
         <asp:SqlDataSource ID="DeporteDS" runat="server" 
@@ -18,7 +62,7 @@
         <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" 
             AutoGenerateRows="False" BackColor="White" BorderColor="#CCCCCC" 
             BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id_cancha" 
-            DataSourceID="CanchasDS" ForeColor="Black" GridLines="Horizontal" Width="50%">
+            DataSourceID="CanchasDS" ForeColor="Black" GridLines="Horizontal" Width="100%">
             <EditRowStyle BackColor="#CCCCCC" Font-Bold="True" ForeColor="#3399F3" />
             <Fields>
                 <asp:BoundField DataField="id_deporte" HeaderText="ID Deporte" 

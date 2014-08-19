@@ -37,8 +37,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="Default.aspx">Inicio</a></li>
-            <li><a href="Galeria.aspx">Galería</a></li>
-            <li><a href="About.aspx">Sobre Nosotros</a></li>
+            <li><a href="Galerias.aspx">Galería</a></li>
+            <li><a href="Nosotros.aspx">Sobre Nosotros</a></li>
             <li><a href="Contact.aspx">Contáctenos</a></li>  
                    
           </ul>
@@ -52,12 +52,12 @@
             <li>
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                         <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> 
+                         <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar Sesión</a> 
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         
                         <%--Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!--%>
-                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/" />
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar Sesión" LogoutPageUrl="~/" />
                     </LoggedInTemplate>
                 </asp:LoginView>
             </li>

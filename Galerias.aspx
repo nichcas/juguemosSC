@@ -1,15 +1,12 @@
-﻿<%@ Page Title="Galeria" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false"
-    CodeFile="About.aspx.vb" Inherits="About" %>
+﻿<%@ Page Title="Galería" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="Galerias.aspx.vb" Inherits="Galerias" %>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-   
-
-    <link rel="stylesheet" href="css/blueimp-gallery.min.css">
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+<link rel="stylesheet" href="css/blueimp-gallery.min.css" />
 
 </asp:Content>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-<body id="galeria">
+    <body id="galeria">
     <div class="container">
    <div class="col-lg-12">
    <h2>
@@ -115,9 +112,9 @@
   </div>
   </div>
 
-    <script src="js/blueimp-gallery.min.js"></script>
+    <script type="text/javascript" src="js/blueimp-gallery.min.js"></script>
 
-     <script>
+     <script type="text/javascript">
          document.getElementById('links').onclick = function (event) {
              event = event || window.event;
              var target = event.target || event.srcElement,
@@ -132,3 +129,4 @@
  </div>
   </body>
 </asp:Content>
+

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Log In" Language="VB" MasterPageFile="~/Account/Account.master" AutoEventWireup="false"
+﻿<%@ Page Title="Iniciar Sesión" Language="VB" MasterPageFile="~/Account/Account.master" AutoEventWireup="false"
     CodeFile="Login.aspx.vb" Inherits="Account_Login" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -19,7 +19,7 @@
     </p>
     <form class="form-horizontal" action="">
 
-    <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false" DestinationPageUrl="~/Miembros/Default.aspx">
+    <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false" DestinationPageUrl="~/Default.aspx">
         <LayoutTemplate>
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server" ></asp:Literal>
@@ -56,7 +56,9 @@
          </div>
                 </fieldset>
                 <p class="submitButton">
-                    <asp:Button ID="LoginButton" CssClass="btn btn-primary" runat="server" CommandName="Login" Text="Log In" ValidationGroup="LoginUserValidationGroup"/>
+                    <asp:Button ID="LoginButton" CssClass="btn btn-primary" runat="server" 
+                        CommandName="Login" 
+                        ValidationGroup="LoginUserValidationGroup"  Text="Iniciar Sesión" />
                 </p>
             </div>
         </LayoutTemplate>

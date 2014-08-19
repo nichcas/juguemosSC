@@ -4,10 +4,11 @@ Imports System
 Partial Class Account_Register
     Inherits System.Web.UI.Page
 
-    Dim con As SqlConnection = New SqlConnection("Data Source=NICH-HP\SQLEXPRESS;Initial Catalog=Juguemos;Integrated Security=True")
+    Dim con As SqlConnection = New SqlConnection("Data Source=SQL5011.myASP.NET;Initial Catalog=DB_9B2B73_juguemos;User Id=DB_9B2B73_juguemos_admin;Password=P1rurara")
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RegisterUser.ContinueDestinationPageUrl = Request.QueryString("ReturnUrl")
+
     End Sub
 
     Protected Sub RegisterUser_CreatedUser(ByVal sender As Object, ByVal e As EventArgs) Handles RegisterUser.CreatedUser
@@ -66,9 +67,6 @@ Partial Class Account_Register
             cmd.ExecuteNonQuery()
             con.Close()
         End If
-
-        
-
 
         Dim continueUrl As String = RegisterUser.ContinueDestinationPageUrl
         If String.IsNullOrEmpty(continueUrl) Then

@@ -1,20 +1,14 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data
 
-Partial Class Miembros_Mensajes
+Partial Class Miembros_Perfil
     Inherits System.Web.UI.Page
 
-    Dim con As SqlConnection = New SqlConnection("Data Source=NICH-HP\SQLEXPRESS;Initial Catalog=Juguemos;Integrated Security=True")
+    Dim con As SqlConnection = New SqlConnection("Data Source=SQL5011.myASP.NET;Initial Catalog=DB_9B2B73_juguemos;User Id=DB_9B2B73_juguemos_admin;Password=P1rurara")
 
     Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         Me.lblUsuario.Text = LoginName1.Page.User.Identity.Name
     End Sub
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
 
     Protected Sub btnImagen_Click(sender As Object, e As System.EventArgs) Handles btnImagen.Click
 
@@ -48,4 +42,5 @@ Partial Class Miembros_Mensajes
         End If
 
     End Sub
+
 End Class

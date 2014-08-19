@@ -1,11 +1,9 @@
-﻿<%@ Page Title="About Us" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false"
-    CodeFile="About.aspx.vb" Inherits="About" %>
+﻿<%@ Page Title="Sobre Nosotros" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="Nosotros.aspx.vb" Inherits="Nosotros" %>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-   
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-<body id="nosotros">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <body id="nosotros">
     <div class="container">
     <div class="col-lg-12">
         <img src="imagenes/bannerBolas1.fw.png" width="100%" />
@@ -43,3 +41,4 @@
   </div>
   </body>
 </asp:Content>
+

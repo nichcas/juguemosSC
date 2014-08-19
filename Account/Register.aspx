@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Register" Language="VB" MasterPageFile="~/Account/Account.master" AutoEventWireup="false"
+﻿<%@ Page Title="Crear Cuenta" Language="VB" MasterPageFile="~/Account/Account.master" AutoEventWireup="false"
     CodeFile="Register.aspx.vb" Inherits="Account_Register" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -20,7 +20,12 @@
     </p></center>
     <form class="form-horizontal">
 
-    <asp:CreateUserWizard ID="RegisterUser" runat="server" EnableViewState="false">
+    <asp:CreateUserWizard ID="RegisterUser" runat="server" EnableViewState="false" 
+        DuplicateEmailErrorMessage="El correo ya se encuentra en uso, por favor ingrese uno diferente" 
+        DuplicateUserNameErrorMessage="Utilice un nomre de usuario diferente." 
+        InvalidEmailErrorMessage="Por favor ingrese un correo válido" 
+        InvalidPasswordErrorMessage="La contraseña debe de ser de al menos 6 caracteres" 
+        UnknownErrorMessage="Su cuenta no pudo ser creada, por favor inténtelo de nuevo.">
         <LayoutTemplate>
             <asp:PlaceHolder ID="wizardStepPlaceholder" runat="server"></asp:PlaceHolder>
             <asp:PlaceHolder ID="navigationPlaceholder" runat="server"></asp:PlaceHolder>
@@ -110,16 +115,7 @@
         <div class="form-group">
             <asp:Label ID="lblFecha" runat="server" AssociatedControlID="drdano" CssClass="col-sm-3 control-label">F. Nacimiento:</asp:Label>
             <div class="col-sm-3">
-                <asp:DropDownList ID="drdano" runat="server"  CssClass="form-control input-md" placeholder="Usar el calendario">
-                    <asp:ListItem>2014</asp:ListItem>
-                    <asp:ListItem>2013</asp:ListItem>    
-                    <asp:ListItem>2012</asp:ListItem>
-                    <asp:ListItem>2010</asp:ListItem> 
-                    <asp:ListItem>2009</asp:ListItem>
-                    <asp:ListItem>2008</asp:ListItem> 
-                    <asp:ListItem>2007</asp:ListItem>
-                    <asp:ListItem>2006</asp:ListItem> 
-                    <asp:ListItem>2005</asp:ListItem>
+                <asp:DropDownList ID="drdano" runat="server"  CssClass="form-control input-md" placeholder="Usar el calendario" CausesValidation="True">
                     <asp:ListItem>2004</asp:ListItem>   
                     <asp:ListItem>2003</asp:ListItem>  
                     <asp:ListItem>2002</asp:ListItem>  
@@ -277,7 +273,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-9">
             <p class="submitButton">
-                <asp:Button ID="CreateUserButton" runat="server" CssClass="btn btn-primary" CommandName="MoveNext" Text="Crear Usuario" 
+                <asp:Button ID="CreateUserButton" runat="server" CssClass="btn btn-primary" CommandName="MoveNext" Text="Crear Cuenta" 
                         ValidationGroup="RegisterUserValidationGroup"/>
             </p>
         </div>
@@ -298,6 +294,6 @@
     </div>
               
 </div>    
-</div>
+
 
 </asp:Content>

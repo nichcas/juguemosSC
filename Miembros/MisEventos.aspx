@@ -1,9 +1,10 @@
-﻿<%@ Page Title="Mis Eventos" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="MisEventos.aspx.vb" Inherits="Miembros_Mensajes" %>
+﻿<%@ Page Title="Mis Eventos" Language="VB" MasterPageFile="~/Miembros/Miembro.master" AutoEventWireup="false" CodeFile="MisEventos.aspx.vb" Inherits="Miembros_MisEventos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
- <body id="misEventos">
+
+<body id="misEventos">
     <div class="container">
         <div class="tab-pane col-lg-8 col-lg-offset-1 active" id="miembro">
             <asp:LoginName ID="LoginName1" runat="server" Visible="false"/>
@@ -60,5 +61,6 @@
         </div>
     </div>
  </body>
+
 </asp:Content>
 

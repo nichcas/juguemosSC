@@ -1,5 +1,5 @@
 ﻿
-Partial Class Miembros_Exito
+Partial Class Nosotros
     Inherits System.Web.UI.Page
 
 End Class
